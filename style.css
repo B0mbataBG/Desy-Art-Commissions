@@ -1,0 +1,362 @@
+/* General styling for the page */
+body {
+    font-family: 'Sofadi One', cursive; /* Update to match calculator page */
+    background-image: linear-gradient(#99928e, #463d36);
+    margin: 0;
+    padding: 0;
+    color: #a1ce56; /* Greenish accent text */
+}
+
+.homePageContent{
+    background-image: linear-gradient(#99928e, #463d36);
+
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #463d36; /* Dark brown to match the calculator page */
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #ddc38a; /* Gold text */
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #a1ce56; /* Brighter yellow-gold hover effect */
+}
+
+/* Hero Section */
+.hero {
+    /*background-color: #463d36; /* Dark brown to match the calculator page */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: #ddc38a; /* Gold text */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ddc38a; /* Gold heading */
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #f2f2f2; /* Light gray subtext */
+}
+
+
+.hero-content{
+    margin: 0px auto;
+    width: 60%;
+    border-radius: 50px;
+    background-color: #463d36;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    position: relative;
+    min-height: 200px;
+    padding: 20px;
+
+}
+
+/* Updated the button positioning */
+.cta-button-wrapper {
+    text-align: center;
+    margin-top: 20px; /* Space between the services and the button */
+}
+
+/* General styling for the page remains the same */
+.cta-button {
+    background-color: #ddc38a;
+    color: #2b2b2b;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left : 50%;
+    transform: translateX(-50%);
+    bottom: calc(45px / -2);
+
+}
+
+
+.cta-button:hover {
+    background-color: #a8c251;
+    color: #fdfdfd;
+}
+
+
+/* About Section */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #463d36; /* Gray for the background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0px auto;
+    min-height: 200px;
+    position: relative;
+    border-radius: 50px;
+    background-color: #463d36;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ddc38a; /* Gold headings */
+}
+
+.about p {
+    font-size: 18px;
+    color: #f2f2f2; /* Light gray text */
+    line-height: 1.6;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    /*background-color: #463d36; /* Dark brown to match calculator */
+    text-align: center;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0px auto;
+    justify-content: space-between;
+    position: relative;
+    margin: 0px auto;
+    
+
+    
+}
+
+.services h2 {
+    font-size: 32px;
+    color: #ddc38a; /* Gold headings */
+    flex: 0 0 100%;
+    border-radius: 50px;
+    background: #463d36;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px;
+    background-color: #463d36;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+
+}
+
+.service-item {
+    display: inline-block;
+    width: 45%;
+    background-color: transparent; /* Transparent background to show the image */
+    background-image: url('test_bg.png'); /* Your background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Ensure the background does not repeat */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #ddc38a; /* Gold headings and text */
+    border-radius: 50px;
+    background-color: #463d36;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+}
+
+.service-item img {
+    width: 300px;
+
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #f2f2f2; /* Light gray text */
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 20px;
+    text-align: center;
+    /*background-color: #595959; /* Gray background */
+}
+
+.portfolio h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #ddc38a; /* Gold headings */
+}
+
+/* Footer */
+footer {
+    margin-top: 150px;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #463d36; /* Dark brown to match the calculator page */
+    color: #ddc38a; /* Gold text */
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer .social-links a {
+    color: #f2f2f2; /* Light gray for links */
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #FFD700; /* Yellow-gold hover for links */
+}
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 50px; /* Size of the icons */
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+#discordIcon{
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: rgb(88 101 242);
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    position: relative;
+}
+
+.copyHint{
+    display:none;
+    top: calc(0% - 5px) ;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    position:absolute;
+    border-radius: 10px;
+    background-color: rgb(88 101 242);
+    padding: 10px;
+    color: white;
+    opacity: 0.95;
+    width: 110px;
+    margin-bottom: 5px;
+
+}
+
+.popUpTriangle{
+    display:none;
+    position: absolute;
+    top: calc(0% + 5px);
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+
+    border-style: solid;
+    border-width: 5px;
+    border-top-color: rgb(88 101 242);
+    background-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    opacity: 0.95;
+
+}
+
+#discordIcon:hover .copyHint,
+#discordIcon:hover .popUpTriangle {
+    display: block;
+}
+
+#discordIcon:focus .copyHint{
+    content: "Copied";
+}
+
+.fa-discord{
+    color: white !important; 
+    font-size: 1.5rem;
+}
+
+#discordIcon:hover .fa-discord{
+    color: black !important;
+}
+
+#discordIcon:hover{
+    background-color: white;
+}
+
+#xIcon{
+    padding: 0.5rem;
+    background-color: rgb(7, 7, 8);
+    text-align: center;
+}
+
+.fa-x-twitter{
+    color: white !important; 
+    font-size: 1.5rem;
+}
+
+#xIcon:hover .fa-x-twitter{
+    color: black !important;
+}
+
+#xIcon:hover{
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 545px){
+    .navbar{
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 5px;
+
+    }
+    .navbar a{
+        width: 50%;
+        background-color: #463d36;
+        margin: 3px auto;
+        padding: 3px;
+        border: solid 1px #ddc38a;
+    }
+
+    
+}

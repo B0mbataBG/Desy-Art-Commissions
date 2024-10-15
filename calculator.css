@@ -1,0 +1,305 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+.rightPicture{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: -1px;
+    top: 150px; /* Position adjustments */
+    z-index: -1; /* Stay behind the content */
+}
+
+
+
+.rightPicture img{
+    width: calc(25vw); /* Width is 35% of the viewport width */
+    height: calc(25vw * 1.8); /* Adjust height proportionally to width (2 is an example ratio, adjust if needed) */
+    opacity: 0.9; /* Slight opacity */
+}
+
+.leftPicture{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+    top: 150px; /* Position adjustments */
+    z-index: -1; /* Stay behind the content */
+
+}
+
+.leftPicture img{
+    width: calc(30vw); /* Width is 30% of the viewport width */
+    height: calc(30vw * 1.5); /* Adjust height proportionally to width (1.5 is an example ratio, adjust if needed) */
+    opacity: 0.9; /* Slight opacity */
+}
+
+/* General styling for the calculator page */
+body {
+    font-family: 'Sofadi One', cursive;
+    background-image: linear-gradient(#99928e, #463d36);
+    background-size: cover; /* Ensure the background gradient covers the entire page */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0px;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #463d36; /* Dark navbar */
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Increased margin for noticeable spacing */
+}
+
+.navbar a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #ddc38a;
+    font-weight: bold;
+    font-size: 18px; /* Slightly larger font size for clarity */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #a1ce56;
+}
+
+/* Calculator Container */
+.container {
+    width: 80%;
+    max-width: 800px;
+    background-color: transparent; /* Transparent background to show the image */
+    background-image: url('test_bg.png'); /* Your background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Ensure the background does not repeat */
+    padding: 40px; /* Increased padding for more space around content */
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ddc38a;
+    font-size: 30px;
+    margin-bottom: 30px; /* Bigger margin for spacing */
+}
+
+h3 {
+    color: #ddc38a;
+    font-size: 20px; /* Larger font for subheadings */
+    font-weight: bold;
+}
+
+p {
+    text-align: center;
+    color: #a1ce56;
+    font-size: 16px; /* Slightly larger font for paragraph text */
+}
+
+/* Custom checkboxes */
+input[type="checkbox"] {
+    accent-color: #ddc38a; /* Gold accent color for checkboxes */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background-color: #ddc38a;
+    border-radius: 3px;
+    border: 2px solid #ddc38a; /* Gold border */
+}
+
+/* Ensure label text aligns with the checkbox */
+label {
+    display: inline-flex;
+    align-items: center;
+    color: #a1ce56;
+    font-size: 18px; /* Increased font size for better readability */
+    margin-bottom: 15px; /* Added more space after each checkbox */
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+/* Dropdown (select) styling */
+select {
+    width: 100%;
+    padding: 12px; /* Increased padding for more space in dropdown */
+    border-radius: 5px;
+    background-color: #5e5147; /* Darker background for dropdown */
+    color: #a1ce56; /* Greenish text */
+    border: 2px solid #ddc38a; /* Gold border */
+    font-size: 18px; /* Larger font for readability */
+    cursor: pointer;
+    appearance: none; /* Removes default arrow styling */
+    margin-bottom: 40px; /* Significantly increased spacing below dropdown */
+}
+
+/* Spacing for the Model Complexity and other sliders */
+label#modelComplexityLabel, label.slider-label {
+    display: inline-flex;
+    align-items: center;
+    color: #a1ce56;
+    font-size: 18px;
+    margin-bottom: 5px; /* Close label to slider */
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+/* Adding more space after every slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px; /* Slightly larger slider track */
+    background: #ddd; /* Track background (light gray) */
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.9;
+    transition: background 0.3s ease;
+    margin-top: -2px; /* Reduced space between label and slider */
+    margin-bottom: 30px; /* Increased space after the slider */
+}
+
+/* Add more space between 'Prop...' section and 'Additional Expressions' */
+#extras-checkboxes {
+    margin-bottom: 50px; /* Increased space between sections */
+}
+
+
+/* TOVA EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/
+/* Slider (range input) Styling */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Slightly larger slider thumb */
+    height: 20px;
+    background: #ddc38a; /* Greenish slider thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #d1fb5c; /* Greenish slider thumb for Firefox */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #d1fb5c; /* Greenish slider thumb for Edge */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*LIIIINIQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+/* Styling for the track before the thumb */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px; /* Larger track size */
+    background: #d1fb5c; /* Greenish track (before thumb) */
+    border-radius: 5px;
+    
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px; /* Larger track size */
+    background: #d1fb5c; /* Greenish track (before thumb) */
+    border-radius: 5px;
+}
+
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8px; /* Larger track size */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #FFD700; /* Gold track for lower section (IE/Edge) */
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #ddd; /* Gray track for upper section (IE/Edge) */
+}
+
+/* Adding space after the "Prop, Pets, Animal Ears, Horns" section */
+#extras-checkboxes {
+    margin-bottom: 50px; /* Add more space below this section */
+}
+
+/* Estimated price styling */
+h2 {
+    text-align: center;
+    font-size: 26px; /* Larger font size for price */
+    color: #ddc38a;
+    margin-top: 30px; /* Increased margin for spacing */
+}
+
+button {
+    background-color: #FFD700;
+    color: #2b2b2b;
+    padding: 15px 30px; /* Larger button for prominence */
+    border-radius: 5px;
+    font-size: 18px; /* Larger font for button */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e5c100;
+}
+
+/* Additional styling for prices */
+#prices_Estimates {
+    color: #ddc38a;
+}
+
+#commissionType1 {
+    color: #ddc38a;
+}
+
+@media (max-width: 545px){
+    .navbar{
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 5px;
+
+    }
+    .navbar a{
+        width: 50%;
+        background-color: #463d36;
+        margin: 3px auto;
+        padding: 3px;
+        border: solid 1px #ddc38a;
+    }
+
+    .rightPicture, 
+    .leftPicture{
+        display: none;
+    }
+}
+    
+.form-group > input {
+    opacity: 0.7
+}
+.form-group:hover > input{
+    opacity: 2.5;
+}

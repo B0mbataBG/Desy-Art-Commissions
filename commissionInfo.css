@@ -1,0 +1,145 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+
+
+/* General styling for the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* General styling for the page */
+body {
+    font-family: 'Sofadi One', cursive;
+    background-image: linear-gradient(#99928e, #463d36);
+    background-size: cover; /* Ensure the background gradient covers the entire page */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0px;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #463d36;
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.navbar a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #ddc38a;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #a1ce56;
+}
+
+/* Commission Info Section */
+.commission-info {
+    background-color: #5e5147;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #ddc38a;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #FFD700;
+}
+
+p {
+    color: #a1ce56;
+    font-size: 18px;
+}
+
+/* Additional Information Section */
+.additional-info {
+    margin-top: 40px;
+    background-color: #463d36;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.additional-info p {
+    color: #ddc38a;
+    font-size: 16px;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #FFD700;
+    color: #2b2b2b;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e5c100;
+}
+
+
+.rightPicture{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: -20px;
+    top: 100px; /* Position adjustments */
+    z-index: -1; /* Stay behind the content */
+}
+
+.rightPicture img{
+    width: calc(30vw); /* Width is 35% of the viewport width */
+    height: calc(30vw * 1.1); /* Adjust height proportionally to width (2 is an example ratio, adjust if needed) */
+    opacity: 0.9; /* Slight opacity */
+}
+
+.leftPicture{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+    top: 100px; /* Position adjustments */
+    z-index: -1; /* Stay behind the content */
+
+}
+
+.leftPicture img{
+    width: calc(30vw); /* Width is 30% of the viewport width */
+    height: calc(30vw * 1.1); /* Adjust height proportionally to width (1.5 is an example ratio, adjust if needed) */
+    opacity: 0.9; /* Slight opacity */
+}

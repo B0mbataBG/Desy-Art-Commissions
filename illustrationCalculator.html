@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illustration Pricing Calculator</title>
+    <link rel="icon" href="desy.png" type="image/png">
+    <link rel="stylesheet" href="illustration_calculator.css">
+</head>
+<body>
+
+
+
+    <div class="rightPicture">
+        <img src="DesyVtuber5.png" alt="supFucker">
+    </div> 
+
+    <div class="leftPicture">
+        <img src="DesyVtuber6.png" alt="sup">
+    </div>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="commissionInfo.html">Commission Info</a>
+        <a href="illustrationCalculator.html">Illustration Calculator</a>
+        <a href="calculator.html">Live2D Calculator</a>
+        <!-- <a href="#">Terms of Service</a> -->
+        <!-- <a href="#">Model Showcases</a> -->
+    </nav>
+    
+    <div class="container">
+        <h1>Illustration Pricing Calculator</h1>
+        <p id="prices_Estimates">All prices shown are estimates only. Prices vary depending on the complexity and other factors.</p>
+        
+        <!-- Dropdown for commission type -->
+        <form id="illustrationForm">
+            <div class="form-group">
+                <label id="illustrationLabel" for="illustrationType">Select Illustration Type</label>
+                <select id="illustrationType">
+                    <option value="" disabled selected>Select Commission Type</option>
+                    <option value="headshot" data-baseprice="37.32">Headshot/Bust Comms - From £37.32</option>
+                    <option value="halfbody" data-baseprice="55.98">Halfbody Comms - From £55.98</option>
+                    <option value="character_design" data-baseprice="55.98">Character Design - From £55.98</option>
+                    <option value="outfit_design" data-baseprice="22.39">Outfit Design - From £22.39</option>
+                    <option value="pngtuber" data-baseprice="111.96">PNGTuber+ - From £111.96</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="modelComplexity">Design Complexity: <span id="complexityValue">0</span></label>
+                <input type="range" id="modelComplexity" min="0" max="5" value="0">
+            </div>
+
+            <!-- Add-ons that will dynamically change -->
+            <div id="addons">
+                <!-- This section will be populated with add-ons based on the selected illustration type -->
+            </div>
+
+            <!-- Privacy fee and total cost -->
+            <div class="form-group">
+                <label><input type="checkbox" id="privacyFee"> NDA/Privacy Fee (30% added)</label>
+            </div>
+        </form>
+
+        <h2>Estimated Price (USD): $<span id="totalCost">0</span></h2>
+    </div>
+
+    <script src="illustration_calculator.js"></script>
+</body>
+</html>
