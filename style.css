@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+
 /* General styling for the page */
 body {
-    font-family: 'Sofadi One', cursive; /* Update to match calculator page */
+    font-family: cursive;
     background-image: linear-gradient(#99928e, #463d36);
     margin: 0;
     padding: 0;
@@ -207,6 +210,7 @@ body {
 
 /* Footer */
 footer {
+    font-family: 'Sofadi One', cursive; /* Update to match calculator page */
     margin-top: 150px;
     text-align: center;
     padding: 30px 0;
@@ -225,7 +229,7 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: #FFD700; /* Yellow-gold hover for links */
+    color: #a1ce56; /* Yellow-gold hover for links */
 }
 .social-links {
     margin-top: 20px;

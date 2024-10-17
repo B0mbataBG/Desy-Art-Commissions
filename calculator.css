@@ -303,3 +303,40 @@ button:hover {
 .form-group:hover > input{
     opacity: 2.5;
 }
+
+
+
+/* Footer */
+footer {
+    margin-top: 150px;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #463d36; /* Dark brown to match the calculator page */
+}
+
+footer p {
+    margin: 10px 0;
+    color: #ddc38a; /* Gold text */
+
+}
+
+footer .social-links a {
+    color: #f2f2f2; /* Light gray for links */
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: #a1ce56; /* Yellow-gold hover for links */
+}
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    
+    text-decoration: none;
+}
