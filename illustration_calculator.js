@@ -135,10 +135,12 @@ function updateTotal() {
         if (document.getElementById('extraCharacter')?.checked) totalCost += 75;
         if (document.getElementById('detailedBackground')?.checked) totalCost += 10;
         if (document.getElementById('rushFee')?.checked) totalCost += 30;
+        if (document.getElementById('props')?.checked) totalCost *= 1.15;
     } else if (illustrationType === 'headshot') {
         if (document.getElementById('extraCharacter')?.checked) totalCost += 50;
         if (document.getElementById('detailedBackground')?.checked) totalCost += 15;
         if (document.getElementById('rushFee')?.checked) totalCost += 10;
+        if (document.getElementById('props')?.checked) totalCost *= 1.15;
     }
     if (document.getElementById('extraOutfit')?.checked) totalCost += 30;
     if (document.getElementById('extraHairstyle')?.checked) totalCost += 15;

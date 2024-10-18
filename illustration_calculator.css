@@ -6,6 +6,7 @@
 html, body {
     overflow-x: hidden; /* Ensure the entire page does not allow horizontal overflow */
     height: 100%;
+    position: relative;
 }
 
 .rightPicture{
