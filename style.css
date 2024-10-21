@@ -340,7 +340,28 @@ footer .social-links a:hover {
 }
 
 
+#blueSkyIcon{
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    position: relative;
+}
 
+.fa-bluesky{
+    color: #0886fe !important; 
+    font-size: 1.5rem;
+}
+
+#blueSkyIcon:hover .fa-bluesky{
+    color: white !important;
+}
+
+#blueSkyIcon:hover{
+    background-color: black;
+}
 
 
 
