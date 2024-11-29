@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commission Pricing</title>
+    <title>Live2D Pricing Calculator</title>
     <link rel="icon" href="desy.png" type="image/png">
-    <link rel="stylesheet" href="calculator.css"> <!-- Link to the new CSS file -->
-    <style>
-        /* Add additional styles if needed */
-    </style>
+    <link rel="stylesheet" href="calculator.css">
 </head>
 <body>
+
 
     <div class="rightPicture">
         <img src="DesyVtuber4.png" alt="supFucker">
@@ -19,6 +17,7 @@
     <div class="leftPicture">
         <img src="DesyVtuber2.png" alt="sup">
     </div>
+
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -29,107 +28,54 @@
         <!-- <a href="#">Terms of Service</a> -->
         <!-- <a href="#">Model Showcases</a> -->
     </nav>
-
-<div class="container">
-    <h1>Commission Pricing</h1>
-    <p id="prices_Estimates">All prices shown are estimates only. Prices vary depending on the complexity and other factors.</p>
     
-    <form id="commissionForm">
-        <!-- Commission Type -->
-        <div class="form-group">
-            <label id="commissionType1" for="commissionType">Commission Type</label>
-            <select id="commissionType">
-                <option value="1000" data-complexity-max="10" data-privacy-fee="20">Full Body Art & Rig - $1000</option>
-                <option value="1500" data-complexity-max="5" data-privacy-fee="25">Chibi Art & Rig - $1500</option>
-            </select>                                
-        </div>
-
-        <!-- Art and Rig Options (only visible for Full Body Art & Rig) -->
-        <div class="form-group" id="artRigOptions" style="display: none;">
-            <label><input type="checkbox" id="rigCheckbox"> Rig</label>
-            <label><input type="checkbox" id="artCheckbox"> Art</label>
-        </div>
-
-        <!-- Model Complexity (based on commission type) -->
-        <div class="form-group">
-            <label for="modelComplexity">Model Complexity: <span id="complexityValue">0</span></label>
-            <input type="range" id="modelComplexity" min="0" max="10" value="0">
-        </div>
-
-        <!-- Additional Hairstyle -->
-        <div class="form-group">
-            <label><input type="checkbox" id="extraHair"> Additional Hairstyle (varries on complexity between $50-$200) </label>
-        </div>
+    <div class="container">
+        <h1>Live2D Pricing Calculator</h1>
+        <p id="prices_Estimates">All prices shown are estimates only. Prices vary depending on the complexity and other factors.</p>
         
-        <!-- Cheek Puff and Mouth X (free) -->
-        <div class="form-group">
-            <label><input type="checkbox">Cheek Puff and Mouth X (free)</label>
-        </div>
+        <!-- Dropdown for commission type -->
+        <form id="illustrationForm">
+            <div class="form-group">
+                <label id="illustrationLabel" for="illustrationType">Select Commision    Type</label>
+                <select id="illustrationType">
+                    <option value="" disabled selected class="italic-option">Select Commission Type</option>
+                    <option value="fullBodyArt" data-baseprice="1000.00">Full Body Art - From $1000.00</option>
+                    <option value="fullBodyRig" data-baseprice="2000.00">Full Body Rig - From $2000.00</option>
+                    <option value="chibiArt&Rig" data-baseprice="1500.00">Chibi Art & Rig - From $1500.00</option>
+                </select>
+            </div>
 
-        <!-- Tongue Out -->
-        <div class="form-group">
-            <label><input type="checkbox" id="tongueOut"> Tongue Out (+$50)</label>
-        </div>
+            <div class="form-group">
+                <label for="modelComplexity">Design Complexity: <span id="complexityValue">0</span></label>
+                <input type="range" id="modelComplexity" min="0" max="10" value="0">
+            </div>
 
-        <!-- Extras -->
-        <h3>Extras</h3>
-        <div class="form-group" id="extras-checkboxes">
-            <label><input type="checkbox" id="prop"> Prop (+$<span id="propPrice">50</span>)</label>
-            <label><input type="checkbox" id="mascot"> Pets / Mascot (+$<span id="mascotPrice">100</span>)</label>
-            <label><input type="checkbox" id="animalEars"> Animal Ears (+$<span id="animalEarsPrice">50</span>)</label>
-            <label><input type="checkbox" id="horns"> Horns (+$<span id="hornsPrice">60</span>)</label>
-        </div>
-        
-        <!-- Additional Expressions -->
-        <div class="form-group">
-            <label for="expressions">Additional Expressions: <span id="expressionsValue">0</span></label>
-            <input type="range" id="expressions" min="0" max="5" value="0">
-        </div>
+            <!-- Add-ons that will dynamically change -->
+            <div id="addons">
+                <!-- This section will be populated with add-ons based on the selected illustration type -->
+            </div>
 
-        <!-- Animated Expressions -->
-        <div class="form-group">
-            <label for="animatedExpressions">Animated Expressions: <span id="animatedExpressionsValue">0</span></label>
-            <input type="range" id="animatedExpressions" min="0" max="5" value="0">
-        </div>
+            <!-- Privacy fee and total cost -->
+            <div class="form-group">
+                <label><input type="checkbox" id="privacyFee"> NDA/Privacy Fee - 100% </label>
+            </div>
+        </form>
 
-        <!-- Arm / Hand Poses -->
-        <div class="form-group">
-            <label for="handPoses">Arm / Hand Poses: <span id="handPosesValue">0</span></label>
-            <input type="range" id="handPoses" min="0" max="3" value="0">
-        </div>
-
-        <!-- Toggled Parts -->
-        <div class="form-group">
-            <label for="toggledParts">Toggled Parts: <span id="toggledPartsValue">0</span></label>
-            <input type="range" id="toggledParts" min="0" max="5" value="0">
-        </div>
-
-        <!-- Nude Base -->
-        <div class="form-group">
-            <label><input type="checkbox" id="nudeBase"> Nude Base (+$50 for Full Body Rig, free for Chibi)</label>
-        </div>
-
-        <!-- Privacy Fee -->
-        <div class="form-group">
-            <input type="checkbox" id="privacyFee" />
-            <label for="privacyFee">Add Privacy Fee? (20% for Full Body, 25% for Chibi)</label>
-        </div>
-
-    </form>
-
-    <h2>Estimated Price (USD): $<span id="totalCost">0</span></h2>
-</div>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2024 Desy5. All Rights Reserved.</p>
-    <div class="social-links">
-        <a href="https://x.com/Desy514" target="blank">Twitter</a>
-        <a href="https://vgen.co/Desy514" target="blank">Vgen</a>
-        <a href="https://bsky.app/profile/desy514.bsky.social" target="blank">BlueSky</a>
+        <h2>Estimated Price (USD): $<span id="totalCost">0</span></h2>
     </div>
-</footer>
 
-<script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Desy5. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://x.com/Desy514" target="blank">Twitter</a>
+            <a href="https://vgen.co/Desy514" target="blank">Vgen</a>
+            <a href="https://bsky.app/profile/desy514.bsky.social" target="blank">BlueSky</a>
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+
+    
 </body>
 </html>

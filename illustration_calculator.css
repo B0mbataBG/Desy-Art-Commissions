@@ -170,7 +170,7 @@ input[type="checkbox"] {
 
 /* Adjusting the label styling */
 label {
-    font-size: 18px;
+    font-size: 22px;
     color: #a1ce56;
     flex-grow: 1; /* Let the label take the remaining space */
     display: inline-block;

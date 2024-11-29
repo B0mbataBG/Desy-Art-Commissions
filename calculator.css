@@ -1,6 +1,9 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
 
+
+
+
 .rightPicture{
     display: flex;
     flex-wrap: wrap;
@@ -72,6 +75,7 @@ body {
 
 /* Calculator Container */
 .container {
+    min-height: 70vh; /* 100% of the viewport height */
     width: 80%;
     max-width: 800px;
     background-color: transparent; /* Transparent background to show the image */
@@ -120,7 +124,7 @@ label {
     display: inline-flex;
     align-items: center;
     color: #a1ce56;
-    font-size: 18px; /* Increased font size for better readability */
+    font-size: 22px; /* Increased font size for better readability */
     margin-bottom: 15px; /* Added more space after each checkbox */
     cursor: pointer;
     padding-left: 10px;
@@ -340,3 +344,8 @@ footer .social-links a:hover {
     
     text-decoration: none;
 }
+
+.tldr-text{
+    color: #a1ce56;
+}
+
