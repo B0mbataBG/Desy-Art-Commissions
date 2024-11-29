@@ -6,10 +6,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const modelComplexityGroup = document.getElementById('modelComplexity').closest('.form-group');
     const privacyFeeGroup = document.getElementById('privacyFee').closest('.form-group');
 
-    // Initially hide the complexity slider and NDA checkbox
-    modelComplexityGroup.style.display = "none";
-    privacyFeeGroup.style.display = "none";
-    addons.style.display = "none";
+
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type'); // Get the type from URL parameter
+
+    if (type) {
+        const selectElement = document.getElementById('illustrationType');
+        selectElement.value = type; // Set the value based on the URL parameter
+        
+        updateAddons();
+        
+        modelComplexityGroup.style.display = "block";
+        privacyFeeGroup.style.display = "block";
+        addons.style.display = "block";
+    }
+    else{
+
+        // Initially hide the complexity slider and NDA checkbox
+        modelComplexityGroup.style.display = "none";
+        privacyFeeGroup.style.display = "none";
+        addons.style.display = "none";
+    }
 
     illustrationType.addEventListener('change', function () {
         if (illustrationType.value === "") {
@@ -34,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     function updateAddons() {
+        console.log("updateAddons called");  // This line helps to debug if the function is actually called
+
         const addonsContainer = document.getElementById('addons');
         addonsContainer.innerHTML = ''; // Clear previous add-ons
         const illustrationType = document.getElementById('illustrationType').value;
@@ -129,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
                 break;
 
-            case 'chibiArt&Rig':
+            case 'chibiArtRig':
                 console.log("Updating addons for Chibi Art & Rig");
 
                 addons += `
@@ -183,21 +202,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
 
-        addonsContainer.innerHTML = addons;
+        //console.log("Generated HTML:", addons);  // Check what HTML is generated
+        console.log(addonsContainer.innerHTML);
 
+        addonsContainer.innerHTML = addons;
 
         document.querySelectorAll('#addons input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', updateTotal);
         });
 
-        attachCheckboxEventListeners();
-
-        if (illustrationType == 'chibiArt&Rig') {
+        if (illustrationType == 'chibiArtRig') {
             attachEventListenersForSliders();
         }
 
-        updateTotal(); // Recalculate the total after switching options
-    }
+        updateTotal();
+        }
 
     function attachCheckboxEventListeners() {
         document.querySelectorAll('#addons input[type="checkbox"]').forEach(checkbox => {
@@ -248,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case 'fullBodyRig':
                 totalCost += complexityLevel * 50;  // $50 per complexity level
                 break;
-            case 'chibiArt&Rig':
+            case 'chibiArtRig':
                 totalCost += complexityLevel * 15;  // $15 per complexity level
                 const expressionsLevel = parseInt(document.getElementById('expressions').value);
                 const animatedExpressionsLevel = parseInt(document.getElementById('animatedExpressions').value);
@@ -303,7 +322,9 @@ document.querySelectorAll('#addons input[type="checkbox"]').forEach(checkbox => 
 
 
 window.onload = function() {
+
     const selectElement = document.getElementById('illustrationType');
     const defaultOption = selectElement.options[selectElement.selectedIndex];
     defaultOption.style.fontStyle = 'italic';
+
 };

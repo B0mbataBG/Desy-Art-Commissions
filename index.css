@@ -10,6 +10,8 @@ body {
     color: #a1ce56; /* Greenish accent text */
 }
 
+
+
 .homePageContent{
     background-image: linear-gradient(#99928e, #463d36);
 
@@ -384,4 +386,18 @@ footer .social-links a:hover {
     }
 
     
+}
+
+.custom-link {
+    text-decoration: none;
+    color: #ddc38a; /* Change the color as needed */
+}
+
+.custom-link:visited {
+    color: #e2c585;
+}
+
+.custom-link:hover {
+    color: #a1ce56;
+    text-decoration: none;
 }
