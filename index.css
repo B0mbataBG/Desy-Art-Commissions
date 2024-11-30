@@ -410,7 +410,8 @@ footer .social-links a:hover {
 
 /* General styling for the page remains the same */
 #comsOpenClosed {
-    background-color: #680e11;
+    /*background-color: #7f954e;*/
+    background-color: #4d4d4d;
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -426,6 +427,7 @@ footer .social-links a:hover {
 
 
 #comsOpenClosed:hover {
-    background-color: #7a0004;
+    /*background-color: #7f954e;*/
+    background-color: #4d4d4d;
     color: #fdfdfd;
 }
