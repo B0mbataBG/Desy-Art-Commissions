@@ -401,3 +401,31 @@ footer .social-links a:hover {
     color: #a1ce56;
     text-decoration: none;
 }
+
+/* Updated the button positioning */
+#comsOpenClosed-wrapper {
+    text-align: center;
+    margin-top: 20px; /* Space between the services and the button */
+}
+
+/* General styling for the page remains the same */
+#comsOpenClosed {
+    background-color: #7a0004;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left : 50%;
+    transform: translateX(-50%);
+    bottom: calc(45px / -2);
+
+}
+
+
+#comsOpenClosed:hover {
+    background-color: #b00005;
+    color: #fdfdfd;
+}
