@@ -2,10 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const illustrationType = document.getElementById('illustrationType');
     const modelComplexityGroup = document.getElementById('modelComplexity').closest('.form-group');
     const privacyFeeGroup = document.getElementById('privacyFee').closest('.form-group');
+    const merchandisingFeeGroup = document.getElementById('merchandisingFee').closest('.form-group');
+
 
     // Initially hide the complexity slider and NDA checkbox
     modelComplexityGroup.style.display = "none";
     privacyFeeGroup.style.display = "none";
+    merchandisingFeeGroup.style.display = "none";
     addons.style.display = "none";
 
     illustrationType.addEventListener('change', function () {
@@ -13,12 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
             // Hide the complexity slider and NDA checkbox if no illustration type is selected
             modelComplexityGroup.style.display = "none";
             privacyFeeGroup.style.display = "none";
+            merchandisingFeeGroup.style.display = "none";
             addons.style.display = "none";
 
         } else {
             // Show the complexity slider and NDA checkbox if a valid type is selected
             modelComplexityGroup.style.display = "block";
             privacyFeeGroup.style.display = "block";
+            merchandisingFeeGroup.style.display = "block";
             addons.style.display = "block";
 
         }
@@ -26,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('privacyFee').addEventListener('change', updateTotal);
+    document.getElementById('merchandisingFee').addEventListener('change', updateTotal);
     document.getElementById('modelComplexity').addEventListener('input', updateComplexity); // Add event listener for slider
 
     function updateAddons() {
@@ -66,6 +72,22 @@ document.addEventListener("DOMContentLoaded", function () {
                         <label><input type="checkbox" id="rushFee"> Rush fee +$30</label>
                     </div>
                 `;
+                break;     
+            case 'fullbody':
+                addons += `
+                    <div class="form-group">
+                        <label><input type="checkbox" id="extraCharacter"> Additional Character +$200</label>
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox" id="detailedBackground"> Detailed Background starts from +$20-150$</label>
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox" id="props"> Additional props +15% of base price (may vary depending on the complexity)</label>
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox" id="rushFee"> Rush fee +$50</label>
+                    </div>
+                `;
                 break;
             case 'character_design':
                 addons += `
@@ -93,6 +115,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                     <div class="form-group">
                         <label><input type="checkbox" id="commercialUse"> Commercial Use +$20</label>
+                    </div>
+                `;
+                break;
+            case 'animated_illustration':
+                addons += `
+                    <div class="form-group">
+                        <label><input type="checkbox" id="animated_illustration_rushFee"> Rush fee +$50</label>
                     </div>
                 `;
                 break;
@@ -164,7 +193,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (document.getElementById('detailedBackground')?.checked) totalCost += 15;
             if (document.getElementById('rushFee')?.checked) totalCost += 10;
             if (document.getElementById('props')?.checked) totalCost *= 1.15;
+        } else if (illustrationType === 'fullbody') {
+            if (document.getElementById('extraCharacter')?.checked) totalCost += 200;
+            if (document.getElementById('detailedBackground')?.checked) totalCost += 20;
+            if (document.getElementById('rushFee')?.checked) totalCost += 50;
+            if (document.getElementById('props')?.checked) totalCost *= 1.15;
         }
+
         if (document.getElementById('extraOutfit')?.checked) totalCost += 30;
         if (document.getElementById('extraHairstyle')?.checked) totalCost += 15;
         if (document.getElementById('designComplexity')?.checked) totalCost += 30; // Example value, can be adjusted
@@ -178,10 +213,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (document.getElementById('extraAccessories')?.checked) totalCost += 5; // Example value, can vary
         if (document.getElementById('animationAdded')?.checked) totalCost += 10; // Example value, can vary
         if (document.getElementById('fullBodyModel')?.checked) totalCost += 70; // Example value, can vary
+        
+        if (document.getElementById('animated_illustration_rushFee')?.checked) totalCost += 50;
 
         // Apply privacy fee if selected
         if (document.getElementById('privacyFee').checked) {
-            totalCost *= 1.3;
+            totalCost *= 1.25;
+        }
+
+        if (document.getElementById('merchandisingFee').checked) {
+            totalCost *= 2;
         }
 
         document.getElementById('totalCost').textContent = totalCost.toFixed(2);
